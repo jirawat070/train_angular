@@ -1,0 +1,52 @@
+<h3> Player List </h3> 
+<!-- <p *ngIf='player.playerId !== "" else loading'>
+    playerId :  {{ player.playerId }} <br>
+    name : {{ player.name }}  <br>
+    birth : {{ player.birth }} <br>
+    highestScore :  {{ player.highestScore }} <br>
+    datetime : {{ player.datetime }} <br>
+</p>
+
+<ng-template #loading>
+    <div>null</div>
+</ng-template> -->
+
+
+<p *ngIf='player.playerId'>
+    playerId :  {{ player.playerId }} <br>
+    name : {{ player.name }}  <br>
+    birth : {{ player.birth }} <br>
+    highestScore :  {{ player.highestScore }} <br>
+    datetime : {{ player.datetime }} <br>
+</p>
+
+<hr>
+
+<table>
+    <tr>
+        <th>playerId</th>
+        <th>name</th>
+        <th>highestScore</th>
+        <th>view</th>
+        <th>edit</th>
+        <th>delete</th>
+      
+    </tr>
+    <tbody>
+    <tr *ngFor = 'let ply of playerList' > 
+        
+        <td>{{ ply.playerId }}</td>
+        <td>{{ ply.name }}</td>
+        <td> {{ ply.highestScore }}</td>
+        <td><button (click)='setPlayer(ply)'>View</button></td>
+        <td> <a href="">edit</a></td>
+        <td><button (click)='setPlayer(ply)'>delete</button></td>
+
+    
+    </tr>
+</tbody>
+</table>
+
+
+
+
