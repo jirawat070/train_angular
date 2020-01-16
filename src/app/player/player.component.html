@@ -12,17 +12,17 @@
 </ng-template> -->
 
 
-<p *ngIf='player.playerId'>
-    playerId :  {{ player.playerId }} <br>
+<p *ngIf='player.id'>
+    playerId :  {{ player.id }} <br>
     name : {{ player.name }}  <br>
     birth : {{ player.birth }} <br>
     highestScore :  {{ player.highestScore }} <br>
-    datetime : {{ player.datetime }} <br>
+    datetime : {{ player.createDateTime }} <br>
 </p>
 
 <hr>
 
-<table>
+<table class="table">
     <tr>
         <th>playerId</th>
         <th>name</th>
@@ -35,7 +35,7 @@
     <tbody>
     <tr *ngFor = 'let ply of playerList' > 
         
-        <td>{{ ply.playerId }}</td>
+        <td>{{ ply.id }}</td>
         <td>{{ ply.name }}</td>
         <td> {{ ply.highestScore }}</td>
         <td><button (click)='setPlayer(ply)'>View</button></td>
@@ -46,6 +46,9 @@
     </tr>
 </tbody>
 </table>
+
+
+
 
 
 
