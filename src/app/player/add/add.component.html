@@ -1,0 +1,13 @@
+
+<h3>Add Player</h3>
+<form [formGroup]="profileForm" (ngSubmit) = "addPlayer()">
+  <small id="helpId" class="text-muted">name</small>
+  <input type="text" formControlName="name" class="form-control" placeholder="" aria-describedby="helpId">
+  <small id="helpId" class="text-muted">birth date</small>
+  <input type="date" formControlName="birth"  class="form-control" placeholder="" aria-describedby="helpId">
+  <small id="helpId" class="text-muted">highestScore</small>
+  <input type="number"  formControlName="highestScore" class="form-control" placeholder="" aria-describedby="helpId">
+  
+  <br>
+<button type="submit" class="btn btn-primary">Add</button>
+</form>
