@@ -22,6 +22,10 @@
 
 <hr>
 
+<button type="submit" routerLink="/player/add"> Add Player</button>
+<br>
+<br>
+
 <table class="table">
     <tr>
         <th>playerId</th>
@@ -39,7 +43,7 @@
         <td>{{ ply.name }}</td>
         <td> {{ ply.highestScore }}</td>
         <td><button (click)='setPlayer(ply)'>View</button></td>
-        <td> <a href="">edit</a></td>
+        <td> <a href="player/edit/{{ply.id}}">edit</a></td>
         <td><button (click)='setPlayer(ply)'>delete</button></td>
 
     
