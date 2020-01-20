@@ -8,7 +8,8 @@ import { HeaderComponent } from './share/header/header.component';
 import { PlayerComponent } from './player/player.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddComponent } from './player/add/add.component';
-import { EditComponent } from './player/edit/edit.component'
+import { EditComponent } from './player/edit/edit.component';
+
 
 @NgModule({
   declarations: [

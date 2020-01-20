@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-player',
   templateUrl: './player.component.html',
@@ -9,7 +9,7 @@ import { PlayerService } from '../player.service';
 export class PlayerComponent implements OnInit {
 player :any;
 playerList :any;
-  constructor(private service:PlayerService) { }
+  constructor(private service:PlayerService,private router: Router) { }
 
   ngOnInit() {
     this.player = {
@@ -71,5 +71,15 @@ playerList :any;
     this.player=player
     console.log('player'+player);
     
+  }
+
+  deletePlayer(id:number){
+    if(confirm("Are you want to delete this player ?")){
+      return this.service.deletePlayer(id).subscribe(res =>{
+      
+        window.location.reload();
+        
+      });
+    }
   }
 }

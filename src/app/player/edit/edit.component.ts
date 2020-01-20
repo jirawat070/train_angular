@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'; //จัดการ พาราม
+import { ActivatedRoute,Router } from '@angular/router'; //จัดการ พาราม
 import { PlayerService } from 'src/app/player.service';
 import { FormGroup, FormControl } from '@angular/forms';
+
 declare var moment: any;
 @Component({
   selector: 'app-edit',
@@ -17,7 +18,7 @@ export class EditComponent implements OnInit {
       highestScore : new FormControl('')
     }
   );
-  constructor(private router: ActivatedRoute,private playerService: PlayerService) { }
+  constructor(private router: ActivatedRoute,private playerService: PlayerService,private router2: Router) { }
 
   ngOnInit() {
     this.router.paramMap.subscribe(params => {
@@ -39,14 +40,18 @@ export class EditComponent implements OnInit {
   }
   
   editPlayer(){
-  //   let pla = {}
-  // pla = this.profileForm.value  
-  // pla['birth'] = moment(this.profileForm.value.birth,"YYYY-MM-DD").format('DD/MM/YYYY')
-  //   console.log(moment(this.profileForm.value.birth,"YYYY-MM-DD").format('DD/MM/YYYY'));
+    let pla = {}
+  pla = this.profileForm.value  
+  pla['birth'] = moment(this.profileForm.value.birth,"YYYY-MM-DD").format('DD/MM/YYYY')
+    console.log(moment(this.profileForm.value.birth,"YYYY-MM-DD").format('DD/MM/YYYY'));
+    if(confirm("Are you want to update this player profile ?")){
     this.playerService.addPlayer(pla).subscribe(res => {
-      console.log("edit" + res);
-      
+  
+    
+        this.router2.navigateByUrl('player');
+     
     })
+  }
   }
 
 }

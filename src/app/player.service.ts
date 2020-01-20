@@ -25,4 +25,10 @@ export class PlayerService {
     return this.http.get(`http://localhost:8080/api/player/`+id);
 
   }
+
+  deletePlayer(id:number){
+    console.log("id" + id);
+    
+    return this.http.delete(`http://localhost:8080/api/player/`+id , {responseType: 'text'});
+  }
 }

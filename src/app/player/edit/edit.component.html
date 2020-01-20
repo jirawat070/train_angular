@@ -1,4 +1,4 @@
-
+<div class="container-fluid">
 <h3>Edit Player</h3>
 <form [formGroup]="profileForm" (ngSubmit) = "editPlayer()">
 <input type="number" formControlName="id"  class="form-control" placeholder="" aria-describedby="helpId" hidden="true">
@@ -10,5 +10,22 @@
   <input type="number"  formControlName="highestScore" class="form-control" placeholder="" aria-describedby="helpId">
   
   <br>
-<button type="submit" class="btn btn-primary">Add</button>
-</form>
+  
+  <button type="submit" class="btn btn-primary" >Confirm</button> 
+  <button type="submit" class="btn btn-danger" routerLink="/player" >Cancle</button>
+   
+ 
+
+
+
+<!-- <div class="container-fluid">
+  <h1>Hello World!</h1>
+  <div class="row">
+    <div class="col-sm-3 col-md-6" style="background-color:yellow;">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-9 col-md-6" style="background-color:pink;">
+      <p>Sed ut perspiciatis...</p>
+    </div>
+  </div>
+</div> -->
